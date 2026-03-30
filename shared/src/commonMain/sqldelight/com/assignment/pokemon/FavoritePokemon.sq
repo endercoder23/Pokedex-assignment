@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS FavoritePokemon (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    imageUrl TEXT NOT NULL
+);
+
+getAllFavorites:
+SELECT * FROM FavoritePokemon;
+
+insertFavorite:
+INSERT OR REPLACE INTO FavoritePokemon(id, name, imageUrl)
+VALUES (?, ?, ?);
+
+deleteFavorite:
+DELETE FROM FavoritePokemon WHERE id = ?;
+
+isFavorite:
+SELECT COUNT(*) > 0 FROM FavoritePokemon WHERE id = ?;
