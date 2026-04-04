@@ -3,6 +3,7 @@ package com.assignment.pokemon.presentation.pokemonlist
 import com.assignment.pokemon.data.model.Pokemon
 import com.assignment.pokemon.data.repository.PokemonRepository
 import com.assignment.pokemon.presentation.base.BaseViewModel
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,6 +14,7 @@ class PokemonListViewModel(
 ) : BaseViewModel() {
 
     private val _state = MutableStateFlow<PokemonListState>(PokemonListState.Loading)
+    @NativeCoroutinesState
     val state: StateFlow<PokemonListState> = _state.asStateFlow()
 
     /** Full unfiltered list kept in memory for client-side search. */

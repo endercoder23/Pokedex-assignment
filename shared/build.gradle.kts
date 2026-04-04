@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.android.library)
     alias(libs.plugins.sqldelight)
+    alias(libs.plugins.kmp.nativecoroutines)
 }
 
 kotlin {
@@ -30,6 +31,10 @@ kotlin {
     }
 
     sourceSets {
+        all {
+            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+        }
+
         commonMain.dependencies {
             // Ktor
             implementation(libs.ktor.client.core)
@@ -47,6 +52,8 @@ kotlin {
             // Coroutines & Serialization
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.kmp.nativecoroutines.core)
+            implementation(libs.kmp.nativecoroutines.annotations)
         }
 
         androidMain.dependencies {

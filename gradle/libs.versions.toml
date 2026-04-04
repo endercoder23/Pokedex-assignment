@@ -6,6 +6,7 @@ sqldelight = "2.0.2"
 koin = "4.0.0"
 coroutines = "1.9.0"
 serialization = "1.7.3"
+kmp-nativecoroutines = "1.0.0-ALPHA-37"
 
 [libraries]
 # Ktor
@@ -29,9 +30,12 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 # Kotlinx
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kmp-nativecoroutines-core = { module = "com.rickclephas.kmp:kmp-nativecoroutines-core", version.ref = "kmp-nativecoroutines" }
+kmp-nativecoroutines-annotations = { module = "com.rickclephas.kmp:kmp-nativecoroutines-annotations", version.ref = "kmp-nativecoroutines" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+kmp-nativecoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "kmp-nativecoroutines" }

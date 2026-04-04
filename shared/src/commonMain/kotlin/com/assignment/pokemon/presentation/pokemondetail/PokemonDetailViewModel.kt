@@ -2,17 +2,20 @@ package com.assignment.pokemon.presentation.pokemondetail
 
 import com.assignment.pokemon.data.repository.PokemonRepository
 import com.assignment.pokemon.presentation.base.BaseViewModel
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+@Suppress("UNUSED")
 class PokemonDetailViewModel(
     private val pokemonName: String,
     private val repository: PokemonRepository,
 ) : BaseViewModel() {
 
     private val _state = MutableStateFlow<PokemonDetailState>(PokemonDetailState.Loading)
+    @NativeCoroutinesState
     val state: StateFlow<PokemonDetailState> = _state.asStateFlow()
 
     init {
