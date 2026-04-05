@@ -17,6 +17,9 @@ import org.koin.core.parameter.parametersOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
+// Store the repository instance so it can be accessed from Swift
+private var _repository: PokemonRepository? = null
+
 /**
  * Call this once at app startup (Application.onCreate on Android, or in the
  * iOS app delegate / SwiftUI @main init).
@@ -29,14 +32,33 @@ fun initKoin(
     enableNetworkLogs: Boolean = false,
     appDeclaration: KoinApplication.() -> Unit = {},
 ) {
-    startKoin {
+    val koinApp = startKoin {
         appDeclaration()
         modules(
             networkModule(enableNetworkLogs),
             databaseModule(driverFactory),
             repositoryModule,
+            viewModelModule,  // Register ViewModels (PokemonListViewModel, etc)
         )
     }
+    
+    // Eager initialization: access repository to ensure _repository is set
+    try {
+        val repo: PokemonRepository = koinApp.koin.get()
+        println("✅ Repository initialized: ${repo::class.simpleName}")
+    } catch (e: Exception) {
+        println("❌ ERROR: Repository initialization failed: ${e.message}")
+        e.printStackTrace()
+    }
+}
+
+/**
+ * Get the PokemonRepository instance from Koin.
+ * Call this after initKoin() has been called.
+ */
+@Throws(IllegalStateException::class)
+fun getRepository(): PokemonRepository {
+    return _repository ?: throw IllegalStateException("Repository not initialized. Call initKoin() first.")
 }
 
 private fun networkModule(enableLogging: Boolean) = module {
@@ -49,7 +71,11 @@ private fun databaseModule(driverFactory: DatabaseDriverFactory) = module {
 }
 
 private val repositoryModule = module {
-    single<PokemonRepository> { PokemonRepositoryImpl(get(), get()) }
+    single<PokemonRepository> { 
+        PokemonRepositoryImpl(get(), get()).also { repo ->
+            _repository = repo  // Capture the repository instance
+        }
+    }
 }
 
 /**

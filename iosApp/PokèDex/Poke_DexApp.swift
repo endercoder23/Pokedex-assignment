@@ -1,6 +1,6 @@
 //
 //  Poke_DexApp.swift
-//  PokèDex
+//  PokèDex
 //
 //  Created by Dharamrajsinh Jadeja on 04/04/26.
 //
@@ -10,15 +10,12 @@ import shared
 
 @main
 struct Poke_DexApp: App {
-    
     init() {
+        // Initialize Koin with platform-specific DatabaseDriverFactory
         ModulesKt.doInitKoin(
             driverFactory: DatabaseDriverFactory(),
-            enableNetworkLogs: true,
-            appDeclaration: { koin in
-                
-            }
-        )
+            enableNetworkLogs: true
+        ) { _ in }
     }
     
     var body: some Scene {

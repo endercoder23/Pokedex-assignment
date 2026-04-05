@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedFavoritePokemon, SharedKotlinUnit, SharedRuntimeTransacterTransaction, SharedKotlinThrowable, SharedRuntimeBaseTransacterImpl, SharedRuntimeTransacterImpl, SharedRuntimeQuery<__covariant RowType>, SharedPokemon, SharedPokemonStat, SharedPokemonDetail, SharedNamedResourceDto, SharedAbilitySlotDtoCompanion, SharedAbilitySlotDto, SharedNamedResourceDtoCompanion, SharedTypeSlotDto, SharedStatEntryDto, SharedPokemonDetailDtoCompanion, SharedPokemonDetailDto, SharedPokemonDtoCompanion, SharedPokemonDto, SharedPokemonListDtoCompanion, SharedPokemonListDto, SharedStatEntryDtoCompanion, SharedTypeSlotDtoCompanion, SharedPokemonPage, SharedFavoritePokemonQueries, SharedPokemonDatabaseCompanion, SharedBaseViewModel, SharedPokemonDetailState, SharedPokemonDetailStateError, SharedPokemonDetailStateLoading, SharedPokemonDetailStateSuccess, SharedPokemonListState, SharedPokemonListStateError, SharedPokemonListStateLoading, SharedPokemonListStateSuccess, SharedPokemonListViewModelCompanion, SharedPokemonDetailViewModel, NSError, SharedPokemonListViewModel, SharedDatabaseDriverFactory, SharedKoin_coreKoinApplication, SharedKoin_coreModule, SharedKotlinArray<T>, SharedRuntimeExecutableQuery<__covariant RowType>, SharedRuntimeAfterVersion, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreScope, SharedKoin_coreParametersHolder, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKotlinByteArray, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_coreSerialKind, SharedKotlinNothing, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedKotlinLazyThreadSafetyMode, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKoin_coreLockable, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreResolutionContext, SharedKotlinByteIterator, SharedKoin_coreScopeRegistryCompanion, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>;
+@class SharedFavoritePokemon, SharedKotlinUnit, SharedRuntimeTransacterTransaction, SharedKotlinThrowable, SharedRuntimeBaseTransacterImpl, SharedRuntimeTransacterImpl, SharedRuntimeQuery<__covariant RowType>, SharedPokemon, SharedPokemonStat, SharedPokemonDetail, SharedNamedResourceDto, SharedAbilitySlotDtoCompanion, SharedAbilitySlotDto, SharedNamedResourceDtoCompanion, SharedTypeSlotDto, SharedStatEntryDto, SharedPokemonDetailDtoCompanion, SharedPokemonDetailDto, SharedPokemonDtoCompanion, SharedPokemonDto, SharedPokemonListDtoCompanion, SharedPokemonListDto, SharedStatEntryDtoCompanion, SharedTypeSlotDtoCompanion, SharedPokemonPage, SharedFavoritePokemonQueries, SharedPokemonDatabaseCompanion, SharedBaseViewModel, SharedPokemonDetailState, SharedPokemonDetailStateError, SharedPokemonDetailStateLoading, SharedPokemonDetailStateSuccess, SharedPokemonListState, SharedPokemonListStateError, SharedPokemonListStateLoading, SharedPokemonListStateSuccess, SharedPokemonListViewModelCompanion, SharedPokemonDetailViewModel, NSError, SharedPokemonListViewModel, SharedDatabaseDriverFactory, SharedKoin_coreKoinApplication, SharedKoin_coreModule, SharedKotlinArray<T>, SharedRuntimeExecutableQuery<__covariant RowType>, SharedRuntimeAfterVersion, SharedKotlinException, SharedKotlinRuntimeException, SharedKoin_coreKoinApplicationCompanion, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedKoin_coreKoinDefinition<R>, SharedKoin_coreScope, SharedKoin_coreParametersHolder, SharedKoin_coreInstanceFactory<T>, SharedKoin_coreSingleInstanceFactory<T>, SharedKoin_coreScopeDSL, SharedKotlinByteArray, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_coreSerialKind, SharedKotlinNothing, SharedKotlinIllegalStateException, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedKotlinLazyThreadSafetyMode, SharedKoin_coreExtensionManager, SharedKoin_coreInstanceRegistry, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry, SharedKoin_coreLockable, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreInstanceFactoryCompanion, SharedKoin_coreResolutionContext, SharedKotlinByteIterator, SharedKoin_coreScopeRegistryCompanion, SharedKoin_coreKind, SharedKoin_coreCallbacks<T>;
 
 @protocol SharedRuntimeSqlDriver, SharedRuntimeTransactionWithoutReturn, SharedRuntimeTransactionWithReturn, SharedRuntimeTransacterBase, SharedRuntimeTransacter, SharedKotlinx_serialization_coreKSerializer, SharedPokemonDatabase, SharedRuntimeSqlSchema, SharedKotlinx_coroutines_coreCoroutineScope, SharedPokemonRepository, SharedKotlinx_coroutines_coreStateFlow, SharedRuntimeQueryListener, SharedRuntimeQueryResult, SharedRuntimeSqlPreparedStatement, SharedRuntimeSqlCursor, SharedRuntimeCloseable, SharedRuntimeTransactionCallbacks, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinCoroutineContext, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinx_coroutines_coreFlow, SharedKotlinx_coroutines_coreSharedFlow, SharedKoin_coreQualifier, SharedKotlinIterator, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinComparable, SharedKoin_coreKoinScopeComponent, SharedKotlinKClass, SharedKotlinLazy, SharedKoin_coreScopeCallback, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKoin_coreKoinComponent, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKoin_coreKoinExtension;
 
@@ -651,6 +651,12 @@ __attribute__((swift_name("PokemonListViewModel.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ModulesKt")))
 @interface SharedModulesKt : SharedBase
+
+/**
+ * @note This method converts instances of IllegalStateException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
++ (id<SharedPokemonRepository> _Nullable)getRepositoryAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("getRepository()")));
 + (void)doInitKoinDriverFactory:(SharedDatabaseDriverFactory *)driverFactory enableNetworkLogs:(BOOL)enableNetworkLogs appDeclaration:(void (^)(SharedKoin_coreKoinApplication *))appDeclaration __attribute__((swift_name("doInitKoin(driverFactory:enableNetworkLogs:appDeclaration:)")));
 @property (class, readonly) SharedKoin_coreModule *viewModelModule __attribute__((swift_name("viewModelModule")));
 @end
@@ -822,6 +828,33 @@ __attribute__((swift_name("Kotlinx_coroutines_coreStateFlow")))
 @protocol SharedKotlinx_coroutines_coreStateFlow <SharedKotlinx_coroutines_coreSharedFlow>
 @required
 @property (readonly) id _Nullable value __attribute__((swift_name("value")));
+@end
+
+__attribute__((swift_name("KotlinException")))
+@interface SharedKotlinException : SharedKotlinThrowable
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
+@end
+
+__attribute__((swift_name("KotlinRuntimeException")))
+@interface SharedKotlinRuntimeException : SharedKotlinException
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
+@end
+
+__attribute__((swift_name("KotlinIllegalStateException")))
+@interface SharedKotlinIllegalStateException : SharedKotlinRuntimeException
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -1076,33 +1109,6 @@ __attribute__((swift_name("KotlinCoroutineContext")))
 - (id<SharedKotlinCoroutineContextElement> _Nullable)getKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
 - (id<SharedKotlinCoroutineContext>)minusKeyKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
 - (id<SharedKotlinCoroutineContext>)plusContext:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end
-
-__attribute__((swift_name("KotlinException")))
-@interface SharedKotlinException : SharedKotlinThrowable
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
-@end
-
-__attribute__((swift_name("KotlinRuntimeException")))
-@interface SharedKotlinRuntimeException : SharedKotlinException
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
-@end
-
-__attribute__((swift_name("KotlinIllegalStateException")))
-@interface SharedKotlinIllegalStateException : SharedKotlinRuntimeException
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(SharedKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
 

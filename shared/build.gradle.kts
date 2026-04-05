@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.sqldelight)
     alias(libs.plugins.kmp.nativecoroutines)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -67,6 +68,13 @@ kotlin {
             implementation(libs.sqldelight.native.driver)
         }
     }
+}
+
+dependencies {
+    add("kspCommonMainMetadata", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
+    add("kspIosX64", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
+    add("kspIosArm64", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
+    add("kspIosSimulatorArm64", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
 }
 
 android {

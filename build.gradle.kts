@@ -4,4 +4,5 @@ plugins {
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.sqldelight) apply false
     alias(libs.plugins.kmp.nativecoroutines) apply false
+    alias(libs.plugins.ksp) apply false
 }
