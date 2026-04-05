@@ -41,7 +41,7 @@ struct PokemonListView: View {
             }
             .navigationTitle("PokéDex")
             .navigationDestination(for: String.self) { name in
-                PokemonDetailView(pokemonName: name)
+                PokemonDetailView(pokemonName: name, repo: repository)
             }
         }
     }
