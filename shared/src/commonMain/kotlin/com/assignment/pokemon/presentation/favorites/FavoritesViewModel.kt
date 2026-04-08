@@ -8,8 +8,9 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 
+@Suppress("UNUSED")
 class FavoritesViewModel(
-    repository: PokemonRepository,
+    private val repository: PokemonRepository,
 ) : BaseViewModel() {
 
     /**

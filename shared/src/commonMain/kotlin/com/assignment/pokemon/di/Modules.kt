@@ -11,28 +11,21 @@ import com.assignment.pokemon.presentation.pokemondetail.PokemonDetailViewModel
 import com.assignment.pokemon.presentation.pokemonlist.PokemonListViewModel
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
+import org.koin.core.context.KoinContext
+import org.koin.mp.KoinPlatform
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
-// Store the repository instance so it can be accessed from Swift
-private var _repository: PokemonRepository? = null
-
-/**
- * Call this once at app startup (Application.onCreate on Android, or in the
- * iOS app delegate / SwiftUI @main init).
- *
- * @param driverFactory  Platform-specific [DatabaseDriverFactory].
- * @param enableNetworkLogs  Set true for debug builds to log HTTP traffic.
- */
 fun initKoin(
     driverFactory: DatabaseDriverFactory,
     enableNetworkLogs: Boolean = false,
     appDeclaration: KoinApplication.() -> Unit = {},
 ) {
-    val koinApp = startKoin {
+    startKoin {
         appDeclaration()
         modules(
             networkModule(enableNetworkLogs),
@@ -41,24 +34,20 @@ fun initKoin(
             viewModelModule,  // Register ViewModels (PokemonListViewModel, etc)
         )
     }
-    
-    // Eager initialization: access repository to ensure _repository is set
-    try {
-        val repo: PokemonRepository = koinApp.koin.get()
-        println("✅ Repository initialized: ${repo::class.simpleName}")
-    } catch (e: Exception) {
-        println("❌ ERROR: Repository initialization failed: ${e.message}")
-        e.printStackTrace()
-    }
 }
 
 /**
  * Get the PokemonRepository instance from Koin.
+ * Thread-safe: delegates to Koin's internal singleton management.
  * Call this after initKoin() has been called.
  */
 @Throws(IllegalStateException::class)
 fun getRepository(): PokemonRepository {
-    return _repository ?: throw IllegalStateException("Repository not initialized. Call initKoin() first.")
+    return try {
+        KoinPlatform.getKoin().get<PokemonRepository>()
+    } catch (e: Exception) {
+        throw IllegalStateException("Repository not initialized. Call initKoin() first.", e)
+    }
 }
 
 private fun networkModule(enableLogging: Boolean) = module {
@@ -72,9 +61,7 @@ private fun databaseModule(driverFactory: DatabaseDriverFactory) = module {
 
 private val repositoryModule = module {
     single<PokemonRepository> { 
-        PokemonRepositoryImpl(get(), get()).also { repo ->
-            _repository = repo  // Capture the repository instance
-        }
+        PokemonRepositoryImpl(get(), get())
     }
 }
 

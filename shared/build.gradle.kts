@@ -71,10 +71,10 @@ kotlin {
 }
 
 dependencies {
-    add("kspCommonMainMetadata", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
-    add("kspIosX64", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
-    add("kspIosArm64", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
-    add("kspIosSimulatorArm64", "com.rickclephas.kmp:kmp-nativecoroutines-ksp:1.0.0-ALPHA-37")
+    add("kspCommonMainMetadata", libs.kmp.nativecoroutines.ksp)
+    add("kspIosX64", libs.kmp.nativecoroutines.ksp)
+    add("kspIosArm64", libs.kmp.nativecoroutines.ksp)
+    add("kspIosSimulatorArm64", libs.kmp.nativecoroutines.ksp)
 }
 
 android {

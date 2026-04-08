@@ -26,8 +26,8 @@ jobs:
         working-directory: iosApp
         run: |
           xcodebuild build \
-            -project PokèDex.xcodeproj \
-            -scheme PokèDex \
+            -project "PokèDex.xcodeproj" \
+            -scheme "PokèDex" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
@@ -36,7 +36,7 @@ jobs:
         working-directory: iosApp
         run: |
           xcodebuild test \
-            -project PokèDex.xcodeproj \
-            -scheme PokèDex \
+            -project "PokèDex.xcodeproj" \
+            -scheme "PokèDex" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16'

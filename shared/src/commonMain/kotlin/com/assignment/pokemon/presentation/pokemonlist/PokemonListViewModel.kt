@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+@Suppress("UNUSED")
 class PokemonListViewModel(
     private val repository: PokemonRepository,
 ) : BaseViewModel() {
